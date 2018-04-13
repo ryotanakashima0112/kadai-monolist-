@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
+    binding.pry
     if login(email, password)
       flash[:success] = 'ログインに成功しました。'
       redirect_to @user
